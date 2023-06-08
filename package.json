@@ -1,5 +1,16 @@
 {
   "dependencies": {
     "react-hook-form": "^7.44.2"
+  },
+
+  "homepage": "https://hiiragi390.github.io/test/",
+  "scripts": {
+    "rm": "rm -rf docs",
+    "mv": "mv build docs",
+    "git": "git add . && git commit && git push origin master",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build"
   }
+
 }
