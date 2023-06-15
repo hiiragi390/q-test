@@ -3,23 +3,25 @@ import db from './Firebase';
 import { rect } from "./Test";
 import key from "./Key";
 
-function Send(){
-    try{
-        console.log(rect);
-        setDoc(doc(db, "test", key),{
-            
-            radius:rect
-        }
-        );
+let Q_id;
 
-        setDoc(doc(db,"documents_list"),{
-            document: key
-        })
-        console.log("completed");
+function Send(Q_list){
+    try{  
+        for(Q_id of Q_list){
+            console.log(Q_id);
+            setDoc(doc(db,"Q", "result", Q_id, key),{          
+                radius:rect
+            }
+            );
+            setDoc(doc(db,"documents_list",Q_id),{
+                document: key
+            })
+            console.log("completed"); 
+        }  
     }
     catch(e){
         console.log(e);
-    }   
+    } 
 }
 
 export default Send;

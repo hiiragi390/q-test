@@ -1,19 +1,23 @@
 import React from 'react';
 import { useRef } from 'react';
+import SendTimeData from './TimePointData';
 
 const centerX = 150;
 const centerY = 150;
 const distanceFromCenter = 125;
 const ballRadius = 15;
-const body_margin = 100;
 let R;
 let rect;
-
+let R_con = [];
+let classN = "";
+let Q_id;
+let time = 0;
+let timer_id;
 
 let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
-export function HandleMove(){
+export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) =>{
       const canvasRef = useRef(null)
 
     const getContext = () => {
@@ -42,6 +46,14 @@ export function HandleMove(){
         //             }
         //             )
 
+    function timeCnt(){
+        time += 0.5;
+    }
+
+    function timer(){
+        SendTimeData(time, Q_id);
+    };
+
         function shape(e){
 
 
@@ -50,19 +62,21 @@ export function HandleMove(){
                 let Y=  e.clientY//windowDimensions.height //+ ballRadius;
                 
                 //console.log("x-",X," y-",Y);
-                R = -(Math.atan2(centerX+body_margin - X,centerY+body_margin - Y)+Math.PI*3/2);
+                R = -(Math.atan2(centerX+body_margin_left - X,centerY+body_margin_top - Y)+Math.PI*3/2);
                 rect = -(R+Math.PI);
                 //console.log(R);
                 x = - distanceFromCenter* Math.cos(R) + centerX;
                 y = - distanceFromCenter* Math.sin(R) + centerY;
 
-                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                    //console.log(ctx.canvas.width, ctx.canvas.height);
-                    ctx.fillStyle = "#0095DD";
-                    ctx.beginPath();
-                    ctx.arc(x, y, ballRadius, 0, Math.PI*2);        
-                    ctx.fill();
-                    ctx.closePath();
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                //console.log(ctx.canvas.width, ctx.canvas.height);
+                ctx.fillStyle = "#0095DD";
+                ctx.beginPath();
+                ctx.arc(x, y, ballRadius, 0, Math.PI*2);        
+                ctx.fill();
+                ctx.closePath();
+
+                R_con.push(R);
                 
                 //console.log(x," & ",y);
                 
@@ -70,16 +84,21 @@ export function HandleMove(){
 
         function Move(){
             window.addEventListener("mousemove", shape);
+            setInterval(timeCnt,500)
+            timer_id = setInterval(timer,500);
         }
 
 
         function Remove(){
             window.removeEventListener("mousemove",shape);
+            clearInterval(timer_id);
+            console.log("test");
         }
         
-
-            return <canvas className="handleLayer" ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}></canvas>    
-        }
+    classN = "handle" + classNum.toString() + " handleLayer";
+    console.log(classN);
+    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}></canvas>    
+}
 
 export default HandleMove;
 export {rect}
