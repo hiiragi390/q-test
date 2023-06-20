@@ -51,7 +51,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     }
 
     function timer(){
-        SendTimeData(time, Q_id);
+        //SendTimeData(time, Q_id);
     };
 
         function shape(e){
@@ -64,6 +64,9 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
                 //console.log("x-",X," y-",Y);
                 R = -(Math.atan2(centerX+body_margin_left - X,centerY+body_margin_top - Y)+Math.PI*3/2);
                 rect = -(R+Math.PI);
+                if(rect<0){
+                    rect += Math.PI*2;
+                }
                 //console.log(R);
                 x = - distanceFromCenter* Math.cos(R) + centerX;
                 y = - distanceFromCenter* Math.sin(R) + centerY;
@@ -84,14 +87,14 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
 
         function Move(){
             window.addEventListener("mousemove", shape);
-            setInterval(timeCnt,500)
-            timer_id = setInterval(timer,500);
+            //setInterval(timeCnt,500)
+            //timer_id = setInterval(timer,500);
         }
 
 
         function Remove(){
             window.removeEventListener("mousemove",shape);
-            clearInterval(timer_id);
+            //clearInterval(timer_id);
             console.log("test");
         }
         
