@@ -1,0 +1,132 @@
+.back{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  border-radius: 100%;
+}
+
+#kinoko_takenoko_back{
+  top: 100px;
+  left: 100px;
+  background-color: white;
+}
+
+#test1_back {
+  top: 100px;
+  left: 100px;
+  background-color: antiquewhite;
+}
+
+.backLayer{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+#kinoko_takenoko_backLayer{
+  top: 150px;
+  left: 150px;
+  background-color: antiquewhite;
+}
+
+#test1_backLayer {
+  top: 150px;
+  left: 150px;
+  background-color: white;
+}
+
+.handleLayer{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+.handle0 {
+  top: 100px;
+  left: 100px;
+}
+
+.handle1{
+  top: 100px;
+  left: 100px;
+}
+
+.canvasWrap{
+  position: relative;
+}
+
+body{
+  margin: 0;
+}
+
+button{
+  position: absolute;
+  left: 520px;
+  top: 940px;
+  width: 70px;
+  height: 30px;
+  font-size: larger;
+}
+
+.canvasBody{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+}
+
+#takenoko{
+  background-color: rgb(164, 219, 127);
+  top: 500px;
+}
+
+.test{
+  position: absolute;
+  width: 250px;
+  height: 500px;
+}
+
+#kinoko{
+  background-color: rgb(255, 241, 113);
+}
+
+#only_kinoko{
+  position: absolute;
+  width: 85px;
+  height: auto;
+  top: 220px;
+  left: 12px;
+}
+
+#double_kinoko {
+  position: absolute;
+  width: 85px;
+  height: auto;
+  top: 12px;
+  left: 170px;
+}
+
+#only_takenoko {
+  position: absolute;
+  width: 85px;
+  height: auto;
+  top: 220px;
+  left: 408px;
+}
+
+#double_takenoko {
+  position: absolute;
+  width: 85px;
+  height: auto;
+  top: 12px;
+  left: 245px;
+}
+
+#not{
+  position: absolute;
+  font-size: 50px;
+  color: rgb(202, 26, 26);
+  /*border: solid 3px white;*/
+  top: 350px;
+  left: 233px;
+}
