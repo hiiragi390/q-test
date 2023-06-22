@@ -28,8 +28,13 @@ const App = () => {
   return (
     <div className="App">
       <div className="canvasBody">
+        <h3 id="test_title">赤羽台キャンパスの食堂について<br></br>パフォーマンス(味、コスパ、営業時間など)に満足していますか</h3>
+        
         <div className="test"></div>
         <div className="canvasWrap">
+          <p id="test_good">満足している</p>
+          <p id="test_bad">不満がある</p>
+          <p id="test_none">あまり利用していない</p>
           <div></div>
           <div className="back" id="test1_back"></div>
           <div className="backLayer" id="test1_backLayer"></div>
@@ -48,7 +53,7 @@ const App = () => {
           <div></div>
           <div className="back" id="kinoko_takenoko_back"></div>
           <div className="backLayer" id="kinoko_takenoko_backLayer"></div>
-          <HandleMove body_margin_left={100} body_margin_top={400} classNum={1} Q_id={"kinoko"}></HandleMove>       
+          <HandleMove body_margin_left={100} body_margin_top={300} classNum={1} Q_id={"kinoko"}></HandleMove>       
         </div>      
       </div>
       <button onClick={()=>Send(Q_list)}>send</button>

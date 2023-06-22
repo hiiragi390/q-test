@@ -54,50 +54,49 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
         //SendTimeData(time, Q_id);
     };
 
-        function shape(e){
-
-
-                let ctx = getContext();
-                let X =  e.clientX //windowDimensions.width //+ ballRadius;
-                let Y=  e.clientY//windowDimensions.height //+ ballRadius;
-                
-                //console.log("x-",X," y-",Y);
-                R = -(Math.atan2(centerX+body_margin_left - X,centerY+body_margin_top - Y)+Math.PI*3/2);
-                rect = -(R+Math.PI);
-                if(rect<0){
-                    rect += Math.PI*2;
-                }
-                //console.log(R);
-                x = - distanceFromCenter* Math.cos(R) + centerX;
-                y = - distanceFromCenter* Math.sin(R) + centerY;
-
-                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                //console.log(ctx.canvas.width, ctx.canvas.height);
-                ctx.fillStyle = "#0095DD";
-                ctx.beginPath();
-                ctx.arc(x, y, ballRadius, 0, Math.PI*2);        
-                ctx.fill();
-                ctx.closePath();
-
-                R_con.push(R);
-                
-                //console.log(x," & ",y);
-                
-        }
-
-        function Move(){
-            window.addEventListener("mousemove", shape);
-            //setInterval(timeCnt,500)
-            //timer_id = setInterval(timer,500);
-        }
-
-
-        function Remove(){
-            window.removeEventListener("mousemove",shape);
-            //clearInterval(timer_id);
-            console.log("test");
-        }
+    function shape(e){
+        let ctx = getContext();
+        let X =  e.clientX //windowDimensions.width //+ ballRadius;
+        let Y=  e.clientY//windowDimensions.height //+ ballRadius;
+        //console.log(X,Y);
         
+        //console.log("x-",X," y-",Y);
+        R = -(Math.atan2(centerX+body_margin_left - X,centerY+body_margin_top - Y)+Math.PI*3/2);
+        rect = -(R+Math.PI);
+        if(rect<0){
+            rect += Math.PI*2;
+        }
+        //console.log(centerY+body_margin_top - Y);
+        x = - distanceFromCenter* Math.cos(R) + centerX;
+        y = - distanceFromCenter* Math.sin(R) + centerY;
+
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        //console.log(ctx.canvas.width, ctx.canvas.height);
+        ctx.fillStyle = "#0095DD";
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI*2);        
+        ctx.fill();
+        ctx.closePath();
+
+        R_con.push(R);
+        
+        //console.log(x," & ",y);
+        
+    }
+
+    function Move(){
+        window.addEventListener("mousemove", shape);
+        setInterval(timeCnt,500)
+        timer_id = setInterval(timer,500);
+    }
+
+
+    function Remove(){
+        window.removeEventListener("mousemove",shape);
+        clearInterval(timer_id);
+        console.log("test");
+    }
+    
     classN = "handle" + classNum.toString() + " handleLayer";
     console.log(classN);
     return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}></canvas>    

@@ -130,3 +130,27 @@ button{
   top: 350px;
   left: 233px;
 }
+
+#test_good{
+  position: absolute;
+  top: 130px;
+  left: 30px;
+}
+
+#test_bad{
+  position: absolute;
+  top: 130px;
+  left: 400px;
+}
+
+#test_none{
+  position: absolute;
+  top: 400px;
+  left: 190px;
+}
+
+#test_title{
+  position: absolute;
+  top: 10px;
+  left: 40px;
+}
