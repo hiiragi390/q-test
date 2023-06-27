@@ -13,7 +13,8 @@ let classN = "";
 let Q_id;
 let time = 0;
 let timer_id;
-
+let X;
+let Y;
 let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
@@ -56,8 +57,9 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
 
     function shape(e){
         let ctx = getContext();
-        let X =  e.clientX //windowDimensions.width //+ ballRadius;
-        let Y=  e.clientY//windowDimensions.height //+ ballRadius;
+        
+        X =  e.clientX //windowDimensions.width //+ ballRadius;
+        Y=  e.clientY//windowDimensions.height //+ ballRadius;
         //console.log(X,Y);
         
         //console.log("x-",X," y-",Y);
@@ -84,22 +86,35 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
         
     }
 
-    function Move(){
+    function Move(e){
+        shape(e);
         window.addEventListener("mousemove", shape);
-        setInterval(timeCnt,500)
+        setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
     }
 
+    function MoveTouch(e){
+        shape(e);
+        window.addEventListener("touchmove", shape);
+        setInterval(timeCnt,500);
+        timer_id = setInterval(timer,500);
+    }
 
     function Remove(){
         window.removeEventListener("mousemove",shape);
         clearInterval(timer_id);
         console.log("test");
     }
+
+    function RemoveTouch(){
+        window.removeEventListener("touchmove",shape);
+        clearInterval(timer_id);
+        console.log("test");
+    }
     
     classN = "handle" + classNum.toString() + " handleLayer";
     console.log(classN);
-    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}></canvas>    
+    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={MoveTouch} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
 export default HandleMove;

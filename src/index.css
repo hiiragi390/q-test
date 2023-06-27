@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 .back{
   width: 300px;
   height: 300px;
@@ -153,4 +159,5 @@ button{
   position: absolute;
   top: 10px;
   left: 40px;
+  font-size: 14px;
 }
