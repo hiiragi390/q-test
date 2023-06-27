@@ -94,6 +94,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     }
 
     function MoveTouch(e){
+        alert("touch");
         e.preventDefault();
         shape(e);
         window.addEventListener("touchmove", shape);
