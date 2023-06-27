@@ -56,7 +56,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     };
 
     function shape(e){
-        e.preventDefault();
+        document.body.style.overflow = "hidden";
         let ctx = getContext();
         
         X =  e.clientX //windowDimensions.width //+ ballRadius;
@@ -95,7 +95,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     }
 
     function MoveTouch(e){
-        e.preventDefault();
+        
         shape(e);
         window.addEventListener("touchmove", shape, { passive: false });
         setInterval(timeCnt,500);
@@ -103,12 +103,14 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     }
 
     function Remove(){
+        document.body.style.overflow = "auto";
         window.removeEventListener("mousemove",shape);
         clearInterval(timer_id);
         console.log("test");
     }
 
     function RemoveTouch(e){
+        document.body.style.overflow = "auto";
         e.preventDefault();
         window.removeEventListener("touchmove",shape);
         clearInterval(timer_id);
