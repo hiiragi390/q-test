@@ -94,7 +94,6 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     }
 
     function MoveTouch(e){
-        alert("touch");
         e.preventDefault();
         shape(e);
         window.addEventListener("touchmove", shape);
@@ -117,7 +116,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     
     classN = "handle" + classNum.toString() + " handleLayer";
     console.log(classN);
-    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={MoveTouch} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
+    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
 export default HandleMove;
