@@ -56,6 +56,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     };
 
     function shape(e){
+        e.preventDefault();
         let ctx = getContext();
         
         X =  e.clientX //windowDimensions.width //+ ballRadius;
@@ -94,9 +95,8 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     }
 
     function MoveTouch(e){
-        e.preventDefault();
         shape(e);
-        window.addEventListener("touchmove", shape);
+        window.addEventListener("touchmove", shape );
         setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
     }
