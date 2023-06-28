@@ -95,22 +95,27 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
         timer_id = setInterval(timer,500);
     }
 
+    function TouchManage(e){
+        e.preventDefault();
+    }
+
     function MoveTouch(e){      
         shape(e);
+        alert(document.body.style.overflow);
         setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
     }
 
     function Remove(){
         document.body.style.overflow = "auto";
+        console.log(document.body.style.overflow);
         window.removeEventListener("mousemove",shape);
         clearInterval(timer_id);
         console.log("test");
     }
 
-    function RemoveTouch(e){
+    function RemoveTouch(){
         document.body.style.overflow = "auto";
-        e.preventDefault();
         window.removeEventListener("touchmove",shape);
         clearInterval(timer_id);
         console.log("test");
@@ -118,7 +123,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     
     classN = "handle" + classNum.toString() + " handleLayer";
     console.log(classN);
-    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={(e) => MoveTouch(e)} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
+    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={(e) => TouchManage(e)} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
 export default HandleMove;
