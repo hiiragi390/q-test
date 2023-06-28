@@ -95,8 +95,12 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
         timer_id = setInterval(timer,500);
     }
 
-    function TouchManage(e){
+    function ScrollManage(e){
         e.preventDefault();
+    }
+    
+    function TouchManage(e){
+        window.addEventListener("touchstart",ScrollManage(e),{ passive:false })
     }
 
     function MoveTouch(e){      
