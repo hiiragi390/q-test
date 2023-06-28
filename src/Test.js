@@ -101,14 +101,12 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
 
     function MoveTouch(e){      
         shape(e);
-        alert(document.body.style.overflow);
         setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
     }
 
     function Remove(){
         document.body.style.overflow = "auto";
-        console.log(document.body.style.overflow);
         window.removeEventListener("mousemove",shape);
         clearInterval(timer_id);
         console.log("test");
