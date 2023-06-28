@@ -57,6 +57,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
 
     function shape(e){
         document.body.style.overflow = "hidden";
+        console.log(document.body.style.overflow);
         let ctx = getContext();
         
         X =  e.clientX //windowDimensions.width //+ ballRadius;
@@ -94,10 +95,8 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
         timer_id = setInterval(timer,500);
     }
 
-    function MoveTouch(e){
-        
+    function MoveTouch(e){      
         shape(e);
-        window.addEventListener("touchmove", shape, { passive: false });
         setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
     }
@@ -119,7 +118,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     
     classN = "handle" + classNum.toString() + " handleLayer";
     console.log(classN);
-    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
+    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={(e) => MoveTouch(e)} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
 export default HandleMove;
