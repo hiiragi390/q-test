@@ -90,20 +90,22 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
 
     function Move(e){
         shape(e);
-        window.addEventListener("mousemove", shape);
+        alert("tets");
+        //window.addEventListener("mousemove", shape);
         setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
     }
 
-    function ScrollManage(e){
-        e.preventDefault();
-    }
+    // function ScrollManage(e){
+        
+    // }
     
-    function TouchManage(e){
-        window.addEventListener("touchstart",ScrollManage(e),{ passive:false })
-    }
+    // function TouchManage(e){
+    //     window.addEventListener("touchstart",ScrollManage(e),{ passive:false })
+    // }
 
-    function MoveTouch(e){      
+    function MoveTouch(e){  
+        e.preventDefault();    
         shape(e);
         setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
@@ -125,7 +127,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
     
     classN = "handle" + classNum.toString() + " handleLayer";
     console.log(classN);
-    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchStart={(e) => TouchManage(e)} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
+    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
 export default HandleMove;
