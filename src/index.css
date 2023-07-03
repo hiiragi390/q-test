@@ -5,40 +5,36 @@ body {
 }
 
 .back{
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   position: absolute;
+  top: 125px;
+  left: 75px;
   border-radius: 100%;
 }
 
 #kinoko_takenoko_back{
-  top: 100px;
-  left: 100px;
   background-color: white;
 }
 
 #test1_back {
-  top: 100px;
-  left: 100px;
-  background-color: antiquewhite;
+  background-color: rgb(237, 237, 237);
 }
 
 .backLayer{
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
+  top: 175px;
+  left: 125px;
 }
 
 #kinoko_takenoko_backLayer{
-  top: 150px;
-  left: 150px;
   background-color: antiquewhite;
 }
 
 #test1_backLayer {
-  top: 150px;
-  left: 150px;
   background-color: white;
 }
 
@@ -50,12 +46,12 @@ body {
 
 .handle0 {
   top: 100px;
-  left: 100px;
+  left: 50px;
 }
 
 .handle1{
   top: 100px;
-  left: 100px;
+  left: 50px;
 }
 
 .canvasWrap{
@@ -66,29 +62,36 @@ body{
   margin: 0;
 }
 
+.button_area{
+  position: absolute;
+  height: 60px;
+  width: 600px;
+  top: 1350px;
+}
+
 button{
   position: absolute;
-  left: 520px;
-  top: 940px;
+  left: 370px;
   width: 70px;
   height: 30px;
   font-size: larger;
+  margin-bottom: 30px;
 }
 
 .canvasBody{
   position: absolute;
-  width: 500px;
+  width: 400px;
   height: 500px;
 }
 
 #takenoko{
   background-color: rgb(164, 219, 127);
-  top: 500px;
+  top: 650px;
 }
 
 .test{
   position: absolute;
-  width: 250px;
+  width: 200px;
   height: 500px;
 }
 
@@ -134,7 +137,7 @@ button{
   color: rgb(202, 26, 26);
   /*border: solid 3px white;*/
   top: 350px;
-  left: 233px;
+  left: 175px;
 }
 
 #test_good{
@@ -146,13 +149,13 @@ button{
 #test_bad{
   position: absolute;
   top: 130px;
-  left: 400px;
+  left: 300px;
 }
 
 #test_none{
   position: absolute;
   top: 400px;
-  left: 190px;
+  left: 160px;
 }
 
 #test_title{
@@ -160,4 +163,28 @@ button{
   top: 10px;
   left: 40px;
   font-size: 14px;
+}
+
+
+.radio_test{
+  position: absolute;
+  top: 460px;
+  left: 20px;
+}
+
+.radio_kinoko{
+  position: absolute;
+  top: 1150px;
+  left: 20px;
+  padding-bottom: 20px;
+}
+
+.radio_test *, .radio_kinoko *{
+  text-align: left;
+  padding: 15px 0;
+}
+
+h3{
+  font-size: 14px;
+  text-align: left;
 }

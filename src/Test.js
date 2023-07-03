@@ -4,7 +4,7 @@ import SendTimeData from './TimePointData';
 
 const centerX = 150;
 const centerY = 150;
-const distanceFromCenter = 125;
+const distanceFromCenter = 100;
 const ballRadius = 15;
 let R;
 let rect;
@@ -67,6 +67,7 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
         //console.log("x-",X," y-",Y);
         R = -(Math.atan2(centerX+body_margin_left - X,centerY+body_margin_top - Y)+Math.PI*3/2);
         rect = -(R+Math.PI);
+        console.log(rect);
         if(rect<0){
             rect += Math.PI*2;
         }
@@ -90,8 +91,8 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
 
     function Move(e){
         shape(e);
-        alert("tets");
-        //window.addEventListener("mousemove", shape);
+        //alert("tets");
+        window.addEventListener("mousemove", shape);
         setInterval(timeCnt,500);
         timer_id = setInterval(timer,500);
     }
