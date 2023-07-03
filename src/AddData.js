@@ -2,6 +2,7 @@ import { setDoc, doc } from "firebase/firestore";
 import db from './Firebase';
 import { rect } from "./Test";
 import key from "./Key";
+import { Radio_A_list } from "./Radio";
 
 let Q_id;
 
@@ -23,6 +24,17 @@ function Send(Q_list){
     catch(e){
         console.log(e);
     } 
+
+    try{
+        for(var k of Radio_A_list){
+            setDoc(doc(db,"Q", "Radio_result", Q_id, key),{          
+                anser:Radio_A_list[k]
+            }
+            );
+        } 
+    }catch{
+
+    }
 }
 
 export default Send;

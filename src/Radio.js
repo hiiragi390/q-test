@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+let Radio_A_list = {};
 
-function RadioButton({option, selected, onChange}){
+function RadioButton(Q_id,{option, selected, onChange}){
+    Radio_A_list[Q_id] = selected;
     return (
         <div>
             {option.map((op) => (
@@ -14,3 +16,4 @@ function RadioButton({option, selected, onChange}){
 }
 
 export default RadioButton;
+export {Radio_A_list}
