@@ -7,10 +7,10 @@ import { Radio_A_list } from "./Radio";
 let Q_id;
 
 function Send(Q_list){
-    console.log(rect,Q_list);
+    //console.log(rect,Q_list);
     try{  
         for(Q_id of Q_list){
-            console.log(Q_id);
+            //console.log(Q_id);
             setDoc(doc(db,"Q", "result", Q_id, key),{          
                 radius:rect
             }
@@ -18,7 +18,7 @@ function Send(Q_list){
             setDoc(doc(db,"documents_list",Q_id),{
                 document: key
             })
-            console.log("completed"); 
+            //console.log("completed"); 
         }  
     }
     catch(e){
@@ -26,14 +26,16 @@ function Send(Q_list){
     } 
 
     try{
+        //console.log(Radio_A_list);
         for(var k of Radio_A_list){
+            var v = k[1];
             setDoc(doc(db,"Q", "Radio_result", Q_id, key),{          
-                anser:Radio_A_list[k]
+                anser:v
             }
             );
         } 
-    }catch{
-
+    }catch(e){
+        console.log(e);
     }
 }
 

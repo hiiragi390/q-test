@@ -18,9 +18,9 @@ let Y;
 let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
-export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) =>{
-      const canvasRef = useRef(null)
-
+export const HandleMove = ({classNum, Q_id}) =>{
+    const canvasRef = useRef(null);
+    
     const getContext = () => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
@@ -57,23 +57,26 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
 
     function shape(e){
         document.body.style.overflow = "hidden";
-        console.log(document.body.style.overflow);
+        //console.log(document.body.style.overflow);
         let ctx = getContext();
-        
-        X =  e.clientX //windowDimensions.width //+ ballRadius;
-        Y=  e.clientY//windowDimensions.height //+ ballRadius;
-        //console.log(X,Y);
+        let canvas = canvasRef.current.getBoundingClientRect();
+
+        X =  e.clientX-canvas.left; //windowDimensions.width //+ ballRadius;
+        Y=  e.clientY-canvas.top;//windowDimensions.height //+ ballRadius;
+        console.log(X,Y);
+
         
         //console.log("x-",X," y-",Y);
-        R = -(Math.atan2(centerX+body_margin_left - X,centerY+body_margin_top - Y)+Math.PI*3/2);
+        R = -(Math.atan2(centerX/*+body_margin_left*/ - X,centerY/*+body_margin_top*/ - Y)+Math.PI*3/2);
         rect = -(R+Math.PI);
-        console.log(rect);
+        //console.log(rect);
         if(rect<0){
             rect += Math.PI*2;
         }
         //console.log(centerY+body_margin_top - Y);
         x = - distanceFromCenter* Math.cos(R) + centerX;
         y = - distanceFromCenter* Math.sin(R) + centerY;
+        console.log("x",x,",y",y);
 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         //console.log(ctx.canvas.width, ctx.canvas.height);
@@ -116,18 +119,17 @@ export const HandleMove = ({body_margin_left, body_margin_top, classNum, Q_id}) 
         document.body.style.overflow = "auto";
         window.removeEventListener("mousemove",shape);
         clearInterval(timer_id);
-        console.log("test");
+        //console.log("test");
     }
 
     function RemoveTouch(){
         document.body.style.overflow = "auto";
         window.removeEventListener("touchmove",shape);
         clearInterval(timer_id);
-        console.log("test");
+        //console.log("test");
     }
     
     classN = "handle" + classNum.toString() + " handleLayer";
-    console.log(classN);
     return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
