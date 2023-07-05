@@ -8,8 +8,8 @@ body {
   width: 250px;
   height: 250px;
   position: absolute;
-  top: 125px;
-  left: 75px;
+  top: 155px;
+  left: 105px;
   border-radius: 100%;
 }
 
@@ -26,8 +26,8 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  top: 175px;
-  left: 125px;
+  top: 205px;
+  left: 155px;
 }
 
 #kinoko_takenoko_backLayer{
@@ -66,7 +66,7 @@ body{
   position: absolute;
   height: 60px;
   width: 600px;
-  top: 1400px;
+  top: 1450px;
 }
 
 button{
@@ -80,18 +80,18 @@ button{
 
 .canvasBody{
   position: absolute;
-  width: 400px;
+  width: 460px;
   height: 500px;
 }
 
 #takenoko{
   background-color: rgb(164, 219, 127);
-  top: 680px;
+  top: 710px;
 }
 
 .test{
   position: absolute;
-  width: 200px;
+  width: 230px;
   height: 500px;
 }
 
@@ -140,22 +140,28 @@ button{
   left: 175px;
 }
 
+#test_both{
+  position: absolute;
+  top: 85px;
+  left: 168px;
+}
+
 #test_good{
   position: absolute;
-  top: 130px;
-  left: 30px;
+  top: 260px;
+  left: 20px;
 }
 
 #test_bad{
   position: absolute;
-  top: 130px;
-  left: 300px;
+  top: 260px;
+  left: 375px;
 }
 
 #test_none{
   position: absolute;
-  top: 400px;
-  left: 160px;
+  top: 415px;
+  left: 185px;
 }
 
 #test_title{
@@ -168,13 +174,13 @@ button{
 
 .radio_test{
   position: absolute;
-  top: 460px;
+  top: 480px;
   left: 20px;
 }
 
 .radio_kinoko{
   position: absolute;
-  top: 1180px;
+  top: 1230px;
   left: 20px;
   padding-bottom: 20px;
 }
@@ -182,7 +188,7 @@ button{
 .radio_test *, .radio_kinoko *{
   text-align: left;
   padding: 5px 0;
-  left: 5px;
+  left: 10px;
 }
 
 h3{

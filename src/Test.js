@@ -49,7 +49,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
     function timeCnt(){
         time += 0.5;
-    }
+    };
 
     function timer(){
         //SendTimeData(time, Q_id);

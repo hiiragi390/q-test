@@ -7,7 +7,7 @@ import Send from './AddData';
 import RadioButton from './Radio';
 
 const Q_list = ["test1", "kinoko"];
-const Radio_List = [["満足している","不満がある","利用していない"],["両方好き","きのこの山が好き","たけのこの里が好き","両方好きではない"]];
+const Radio_List = [["満足している","満足している部分と不満に思う部分がある","不満がある","利用していない"],["両方好き","きのこの山が好き","たけのこの里が好き","両方好きではない"]];
 const Radio_Q_List = ["test1","kinokotakenoko"];
 const test1_list = [1,2,3,4];
 const kinotake_list = [5,6,7,8];
@@ -42,6 +42,7 @@ const App = () => {
         
         <div className="test"></div>
         <div className="canvasWrap">
+          <p id="test_both">満足している部分と<br></br>不満に思う部分がある</p>
           <p id="test_good">満足している</p>
           <p id="test_bad">不満がある</p>
           <p id="test_none">利用していない</p>
