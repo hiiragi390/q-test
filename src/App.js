@@ -78,7 +78,7 @@ const App = () => {
 
 
       <div className='radio_kinoko'>
-        <h3>きのこの山/たけのこの里について<br></br>当てはまるものを選んでください</h3>
+        <h3>きのこの山/たけのこの里について当てはまるものを<br></br>選んでください</h3>
         <RadioButton Q_id={"kinotake"} option={Radio_List[1]} selected={selected} onChange={RadiohandleChange}></RadioButton>
       </div>
 

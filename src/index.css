@@ -167,7 +167,7 @@ button{
 #test_title{
   position: absolute;
   top: 10px;
-  left: 40px;
+  left: 20px;
   font-size: 14px;
 }
 
@@ -187,7 +187,7 @@ button{
 
 .radio_test *, .radio_kinoko *{
   text-align: left;
-  padding: 5px 0;
+  padding: 5px;
   left: 10px;
 }
 
@@ -195,5 +195,7 @@ h3{
   font-size: 14px;
   text-align: left;
   font-weight: bold;
+  background-color: rgb(245, 245, 245);
+  padding: 5px;
 }
 
