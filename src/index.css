@@ -101,33 +101,33 @@ button{
 
 #only_kinoko{
   position: absolute;
-  width: 85px;
+  width: 70px;
   height: auto;
-  top: 220px;
+  top: 230px;
   left: 12px;
 }
 
 #double_kinoko {
   position: absolute;
-  width: 85px;
+  width: 70px;
   height: auto;
-  top: 12px;
+  top: 30px;
   left: 170px;
 }
 
 #only_takenoko {
   position: absolute;
-  width: 85px;
+  width: 70px;
   height: auto;
-  top: 220px;
-  left: 408px;
+  top: 230px;
+  left: 380px;
 }
 
 #double_takenoko {
   position: absolute;
-  width: 85px;
+  width: 70px;
   height: auto;
-  top: 12px;
+  top: 30px;
   left: 245px;
 }
 
