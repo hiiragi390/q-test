@@ -185,7 +185,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
     function MoveTouch(e){  
         e.preventDefault();    
-        shape(e);
+        touchShape(e);
         setInterval(timeCnt,500);
         timer_id = setInterval(Settimer,500);
     }
