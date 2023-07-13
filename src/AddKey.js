@@ -1,7 +1,7 @@
 import key from "./Key";
 
 
-export function AddKey(){
+export const AddKey = () =>{
     let G_cookie = true;
     let cookies = document.cookie;
     let cookieItem = cookies.split(";");
