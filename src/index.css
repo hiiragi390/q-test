@@ -104,15 +104,15 @@ button{
   width: 70px;
   height: auto;
   top: 230px;
-  left: 12px;
+  left: 22px;
 }
 
 #double_kinoko {
   position: absolute;
-  width: 70px;
+  width: 60px;
   height: auto;
-  top: 30px;
-  left: 170px;
+  top: 75px;
+  left: 165px;
 }
 
 #only_takenoko {
@@ -120,15 +120,15 @@ button{
   width: 70px;
   height: auto;
   top: 230px;
-  left: 380px;
+  left: 370px;
 }
 
 #double_takenoko {
   position: absolute;
-  width: 70px;
+  width: 60px;
   height: auto;
-  top: 30px;
-  left: 245px;
+  top: 75px;
+  left: 235px;
 }
 
 #not{
@@ -136,8 +136,8 @@ button{
   font-size: 50px;
   color: rgb(202, 26, 26);
   /*border: solid 3px white;*/
-  top: 350px;
-  left: 175px;
+  top: 355px;
+  left: 205px;
 }
 
 #test_both{
@@ -199,3 +199,8 @@ h3{
   padding: 5px;
 }
 
+.kinotake_h{
+  z-index: 10;
+  position: relative;
+  margin: 10px 20px ;
+}
