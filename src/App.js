@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from 'react';
 import db from './Firebase';
 import Send from './AddData';
 import RadioButton from './Radio';
+import AddKey from './AddKey';
 
 const Q_list = ["test1", "kinoko"];
 const Radio_List = [["満足している","どちらとも言えない","不満がある","利用していない"],["両方好き","きのこの山が好き","たけのこの里が好き","両方好きではない"]];
@@ -36,7 +37,7 @@ const App = () => {
   // })
 
   return (
-    <div className="App">
+    <div className="App" onLoad={AddKey}>
       <div className="canvasBody">
         <h3 id="test_title">赤羽台キャンパスの食堂について<br></br>パフォーマンス(味、コスパ、営業時間など)に満足していますか</h3>
         
