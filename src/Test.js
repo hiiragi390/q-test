@@ -11,7 +11,6 @@ let rect;
 let R_con = [];
 let classN = "";
 let Q_id;
-let time = 0;
 let timer_id;
 let X;
 let Y;
@@ -19,6 +18,7 @@ let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
 export const HandleMove = ({classNum, Q_id}) =>{
+    let timer = 0;
     const canvasRef = useRef(null);
     
     const getContext = () => {
@@ -48,11 +48,11 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //             )
 
     function timeCnt(){
-        time += 0.5;
+        timer += 1;
     };
 
-    function timer(){
-        //SendTimeData(time, Q_id);
+    function Settimer(){
+        SendTimeData(timer, Q_id);
     };
 
     function shape(e){
@@ -63,7 +63,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
         X =  e.clientX-canvas.left; //windowDimensions.width //+ ballRadius;
         Y=  e.clientY-canvas.top;//windowDimensions.height //+ ballRadius;
-        console.log(X,Y);
+        //console.log(X,Y);
 
         
         //console.log("x-",X," y-",Y);
@@ -76,7 +76,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //console.log(centerY+body_margin_top - Y);
         x = - distanceFromCenter* Math.cos(R) + centerX;
         y = - distanceFromCenter* Math.sin(R) + centerY;
-        console.log("x",x,",y",y);
+        //console.log("x",x,",y",y);
 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         //console.log(ctx.canvas.width, ctx.canvas.height);
@@ -97,7 +97,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //alert("tets");
         window.addEventListener("mousemove", shape);
         setInterval(timeCnt,500);
-        timer_id = setInterval(timer,500);
+        timer_id = setInterval(Settimer,1000);
     }
 
     // function ScrollManage(e){
@@ -112,7 +112,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         e.preventDefault();    
         shape(e);
         setInterval(timeCnt,500);
-        timer_id = setInterval(timer,500);
+        timer_id = setInterval(Settimer,500);
     }
 
     function Remove(){

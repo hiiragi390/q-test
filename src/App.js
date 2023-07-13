@@ -12,6 +12,8 @@ const Radio_List = [["満足している","どちらとも言えない","不満�
 const Radio_Q_List = ["test1","kinokotakenoko"];
 const test1_list = [1,2,3,4];
 const kinotake_list = [5,6,7,8];
+const test1_timer = 0;
+const kinotake_timer = 0;
 
 const App = () => {
   const [selected, setSelected] = useState("");
@@ -85,7 +87,7 @@ const App = () => {
       </div>
 
       <div className='button_area'>
-        <button onClick={()=>Send(Q_list)}>回答を確定</button>
+        <button onClick={()=>[Send(Q_list)]}>回答を確定</button>
       </div>
 
     </div>
