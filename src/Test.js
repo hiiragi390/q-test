@@ -56,6 +56,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
     };
 
     function shape(e){
+        console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
         let ctx = getContext();
@@ -91,6 +92,80 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //console.log(x," & ",y);
         
     }
+
+        function touchShape(e){
+        console.log(e);
+        document.body.style.overflow = "hidden";
+        //console.log(document.body.style.overflow);
+        let ctx = getContext();
+        let canvas = canvasRef.current.getBoundingClientRect();
+
+        X = e.changeTouches[0].clientX-canvas.left; //windowDimensions.width //+ ballRadius;
+        Y=  e.changeTouches[0].clientY-canvas.top;//windowDimensions.height //+ ballRadius;
+        //console.log(X,Y);
+
+        
+        //console.log("x-",X," y-",Y);
+        R = -(Math.atan2(centerX/*+body_margin_left*/ - X,centerY/*+body_margin_top*/ - Y)+Math.PI*3/2);
+        rect = -(R+Math.PI);
+        //console.log(rect);
+        if(rect<0){
+            rect += Math.PI*2;
+        }
+        //console.log(centerY+body_margin_top - Y);
+        x = - distanceFromCenter* Math.cos(R) + centerX;
+        y = - distanceFromCenter* Math.sin(R) + centerY;
+        //console.log("x",x,",y",y);
+
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        //console.log(ctx.canvas.width, ctx.canvas.height);
+        ctx.fillStyle = "#0095DD";
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI*2);        
+        ctx.fill();
+        ctx.closePath();
+
+        R_con.push(R);
+        
+        //console.log(x," & ",y);
+        
+    }
+
+    function F_shape(){
+        document.body.style.overflow = "hidden";
+        //console.log(document.body.style.overflow);
+        let ctx = getContext();
+        let canvas = canvasRef.current.getBoundingClientRect();
+
+        X = 0; //windowDimensions.width //+ ballRadius;
+        Y= 0;//windowDimensions.height //+ ballRadius;
+        //console.log(X,Y);
+
+        
+        //console.log("x-",X," y-",Y);
+        R = -(Math.atan2(centerX/*+body_margin_left*/ - X,centerY/*+body_margin_top*/ - Y)+Math.PI*3/2);
+        rect = -(R+Math.PI);
+        //console.log(rect);
+        if(rect<0){
+            rect += Math.PI*2;
+        }
+        //console.log(centerY+body_margin_top - Y);
+        x = - distanceFromCenter* Math.cos(R) + centerX;
+        y = - distanceFromCenter* Math.sin(R) + centerY;
+        //console.log("x",x,",y",y);
+
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        //console.log(ctx.canvas.width, ctx.canvas.height);
+        ctx.fillStyle = "#0095DD";
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI*2);        
+        ctx.fill();
+        ctx.closePath();
+
+        R_con.push(R);
+    }
+
+
 
     function Move(e){
         shape(e);
@@ -130,7 +205,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
     }
     
     classN = "handle" + classNum.toString() + " handleLayer";
-    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
+    return <canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
 export default HandleMove;
