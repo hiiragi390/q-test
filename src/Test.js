@@ -48,7 +48,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //             )
 
     function timeCnt(){
-        timer += 1;
+        timer += 0.5;
     };
 
     function Settimer(){
