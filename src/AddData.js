@@ -27,8 +27,8 @@ function Send(Q_list){
 
     try{
         //console.log(Radio_A_list);
-        for(var k of Radio_A_list){
-            var v = k[1];
+        for(let k of Radio_A_list){
+            let v = k[1];
             setDoc(doc(db,"Q", "Radio_result", Q_id, key),{          
                 anser:v
             }

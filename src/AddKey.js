@@ -5,7 +5,6 @@ export const AddKey = () =>{
     let G_cookie = true;
     let cookies = document.cookie;
     let cookieItem = cookies.split(";");
-    let cookieValue = "";
 
     for(let i=0;i<cookieItem.length;i++){
         let el = cookieItem[i].split("=");
@@ -18,7 +17,6 @@ export const AddKey = () =>{
     if(G_cookie){
         document.cookie = "key=" + key;
     }
-    console.log(document.cookie);
 }
 
 export default AddKey;
