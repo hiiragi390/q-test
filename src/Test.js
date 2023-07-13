@@ -93,7 +93,8 @@ export const HandleMove = ({classNum, Q_id}) =>{
         
     }
 
-        function touchShape(e){
+    function touchShape(e){
+        e.preventDefault();
         console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
