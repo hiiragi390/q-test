@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRef } from 'react';
+import { useRef,useState } from 'react';
 import SendTimeData from './TimePointData';
 
 const centerX = 150;
@@ -16,9 +16,9 @@ let X;
 let Y;
 let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
-let test;
 
 export const HandleMove = ({classNum, Q_id}) =>{
+    const [test, setTest] = useState(0);
     let timer = 0;
     const canvasRef = useRef(null);
     
@@ -206,10 +206,10 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //console.log("test");
     }
 
-    window.addEventListener("touchmove", shape);
+    window.addEventListener("touchmove", ()=>setTest(test="touchmove"));
     
     classN = "handle" + classNum.toString() + " handleLayer";
-    return (<canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}><p>{rect}</p></canvas>  
+    return (<div><canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas><p className='test'>{test}</p> </div> 
     )  
 }
 
