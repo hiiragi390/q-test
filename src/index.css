@@ -4,6 +4,10 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+.App{
+  cursor: pointer;
+}
+
 .back{
   width: 250px;
   height: 250px;
