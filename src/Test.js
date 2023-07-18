@@ -18,7 +18,6 @@ let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
 export const HandleMove = ({classNum, Q_id}) =>{
-    React.initializeTouchEvents(true);
     let timer = 0;
     const canvasRef = useRef(null);
     
@@ -205,6 +204,8 @@ export const HandleMove = ({classNum, Q_id}) =>{
         clearInterval(timer_id);
         //console.log("test");
     }
+
+    window.addEventListener("touchmove", shape);
     
     classN = "handle" + classNum.toString() + " handleLayer";
     return <canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
