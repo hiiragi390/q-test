@@ -16,6 +16,7 @@ let X;
 let Y;
 let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
+let test;
 
 export const HandleMove = ({classNum, Q_id}) =>{
     let timer = 0;
@@ -208,7 +209,8 @@ export const HandleMove = ({classNum, Q_id}) =>{
     window.addEventListener("touchmove", shape);
     
     classN = "handle" + classNum.toString() + " handleLayer";
-    return <canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
+    return (<canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}><p>{rect}</p></canvas>  
+    )  
 }
 
 export default HandleMove;
