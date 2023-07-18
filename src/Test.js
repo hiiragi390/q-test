@@ -18,6 +18,7 @@ let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
 export const HandleMove = ({classNum, Q_id}) =>{
+    React.initializeTouchEvents(true);
     let timer = 0;
     const canvasRef = useRef(null);
     
