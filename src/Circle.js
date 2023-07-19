@@ -16,11 +16,18 @@ let X;
 let Y;
 let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
+const supportTouch = "ontouched" in document;
+const EVENT_TouchStart = supportTouch? "touchstart":"mousedown";
+const EVENT_TouchMove = supportTouch? "touchmove":"mousemove";
+const EVENT_TouchEnd = supportTouch? "touchend":"mouseup";
+
 
 export const HandleMove = ({classNum, Q_id}) =>{
+    classN = "handle" + classNum.toString() + " handleLayer";
     const [test, setTest] = useState(0);
     let timer = 0;
     const canvasRef = useRef(null);
+    let TouchFlag = false;
     
     const getContext = () => {
         const canvas = canvasRef.current;
@@ -206,10 +213,26 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //console.log("test");
     }
 
-    window.addEventListener("touchmove", ()=>setTest(test="touchmove"));
+    canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
+        TouchFlag = true;
+    })
+    canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
+        TouchFlag = false;
+    })
+    canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
+        if(TouchFlag){
+            e.preventDefault();
+            if(supportTouch){
+                const ctx = getContext();
+                test = e.changeTouches[0].clientX-ctx.getBoundingClientRect().left;
+            }
+        }
+    })
     
-    classN = "handle" + classNum.toString() + " handleLayer";
-    return (<div><canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas><p className='test'>{test}</p> </div> 
+    {/*onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}*/}
+    
+
+    return (<div><canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}></canvas><p className='test'>{test}</p> </div> 
     )  
 }
 

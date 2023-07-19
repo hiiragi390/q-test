@@ -1,5 +1,5 @@
 import './App.css';
-import { HandleMove } from './Test' 
+import { HandleMove } from './Circle' 
 import ReactDOM from 'react-dom/client';
 import { useRef, useEffect, useState } from 'react';
 import db from './Firebase';

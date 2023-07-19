@@ -1,6 +1,6 @@
 import { setDoc, doc } from "firebase/firestore";
 import db from './Firebase';
-import { rect } from "./Test";
+import { rect } from "./Circle";
 import key from "./Key";
 import { Radio_A_list } from "./Radio";
 
