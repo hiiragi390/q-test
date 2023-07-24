@@ -64,7 +64,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
     };
 
     function shape(e){
-        console.log(e);
+        //console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
         let ctx = getContext();
@@ -213,26 +213,33 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //console.log("test");
     }
 
-    canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
-        TouchFlag = true;
-    })
-    canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
-        TouchFlag = false;
-    })
-    canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
-        if(TouchFlag){
-            e.preventDefault();
-            if(supportTouch){
-                const ctx = getContext();
-                test = e.changeTouches[0].clientX-ctx.getBoundingClientRect().left;
+    document.addEventListener("DOMContentLoaded",function(){
+        console.log("tet");
+        canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
+            TouchFlag = true;
+        })
+        canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
+            TouchFlag = false;
+        })
+        canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
+            console.log("224");
+            if(TouchFlag){
+                console.log("test");
+                e.preventDefault();
+                if(supportTouch){
+                    const ctx = getContext();
+                    test = e.changeTouches[0].clientX-ctx.getBoundingClientRect().left;
+                    console.log(test);
+                }
             }
-        }
+        })
     })
+
     
     {/*onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}*/}
     
-
-    return (<div><canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}></canvas><p className='test'>{test}</p> </div> 
+    {/* onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}*/}
+    return (<div><canvas className={classN} ref={canvasRef} onLoad={F_shape}></canvas><p className='test'>{test}</p> </div> 
     )  
 }
 
