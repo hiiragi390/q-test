@@ -56,7 +56,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
                     console.log(test);
                     shape(e);
                 }
-                shape(e);
+                //shape(e);
             }
         })
     },[])
