@@ -40,7 +40,25 @@ export const HandleMove = ({classNum, Q_id}) =>{
     };
 
     React.useEffect(()=>{
-        canvasRef.addEventListener()
+        canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
+            TouchFlag = true;
+        })
+        canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
+            TouchFlag = false;
+        })
+        canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
+            console.log(TouchFlag);
+            if(TouchFlag==true){
+                e.preventDefault();
+                if(supportTouch){
+                    const ctx = getContext();
+                    test = e.changeTouches[0].clientX-ctx.getBoundingClientRect().left;
+                    console.log(test);
+                    shape(e);
+                }
+                shape(e);
+            }
+        })
     },[])
 //   useEffect(() => {
 //     const ctx = this.getContext();
@@ -223,25 +241,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         
     })
 
-    console.log("tet");
-        canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
-            TouchFlag = true;
-        })
-        canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
-            TouchFlag = false;
-        })
-        canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
-            console.log("224");
-            if(TouchFlag){
-                console.log("test");
-                e.preventDefault();
-                if(supportTouch){
-                    const ctx = getContext();
-                    test = e.changeTouches[0].clientX-ctx.getBoundingClientRect().left;
-                    console.log(test);
-                }
-            }
-        })
+    //console.log("tet");
 
     
     {/*onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}*/}
