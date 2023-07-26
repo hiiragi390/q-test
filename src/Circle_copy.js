@@ -39,24 +39,29 @@ export const HandleMove = ({classNum, Q_id}) =>{
         return canvas.getContext('2d');
     };
 
+    console.log(EVENT_TouchMove);
     React.useEffect(()=>{
         canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
+            e.preventDefault();
             TouchFlag = true;
         })
         canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
             TouchFlag = false;
         })
         canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
-            console.log(TouchFlag);
-            if(TouchFlag==true){
-                e.preventDefault();
-                if(supportTouch){
-                    const ctx = getContext();
-                    test = e.changeTouches[0].clientX-ctx.getBoundingClientRect().left;
-                    console.log(test);
-                    shape(e);
-                }
-                //shape(e);
+            alert("test");
+            e.preventDefault();
+            console.log(EVENT_TouchMove);
+            if(TouchFlag){
+
+                // e.preventDefault();
+                // if(supportTouch){
+                //     const ctx = getContext();
+                //let test = e.changeTouches[0].clientX-canvasRef.current.getBoundingClientRect().left;
+                //console.log(test);
+                //     shape(e);
+                // }
+                shape(e);
             }
         })
     },[])
