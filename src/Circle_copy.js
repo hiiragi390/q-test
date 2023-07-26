@@ -39,7 +39,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         return canvas.getContext('2d');
     };
 
-    console.log(EVENT_TouchMove);
+    alert(EVENT_TouchMove);
     React.useEffect(()=>{
         canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
             e.preventDefault();
