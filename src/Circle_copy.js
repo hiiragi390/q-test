@@ -42,6 +42,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
     alert(EVENT_TouchMove);
     React.useEffect(()=>{
         canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
+            alert("test");
             e.preventDefault();
             TouchFlag = true;
         })
@@ -49,7 +50,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
             TouchFlag = false;
         })
         canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
-            alert("test");
+            
             e.preventDefault();
             console.log(EVENT_TouchMove);
             if(TouchFlag){
