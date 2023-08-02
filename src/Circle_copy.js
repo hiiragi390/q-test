@@ -65,7 +65,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
                 shape(e);
             }
         })
-    },[])
+    },[canvasRef])
 //   useEffect(() => {
 //     const ctx = this.getContext();
 //     ctx.save();
