@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRef,useState } from 'react';
+import { useRef,useState,useEffect } from 'react';
 import SendTimeData from './TimePointData';
 
 const centerX = 150;
@@ -39,33 +39,40 @@ export const HandleMove = ({classNum, Q_id}) =>{
         return canvas.getContext('2d');
     };
 
-    alert(EVENT_TouchMove);
-    React.useEffect(()=>{
-        canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
-            alert("test");
-            e.preventDefault();
-            TouchFlag = true;
-        })
-        canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
-            TouchFlag = false;
-        })
-        canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
+    //alert(EVENT_TouchMove);
+    console.log(canvasRef.current);
+    useEffect(()=>{
+        console.log(canvasRef.current);
+        const touch_test = (e) => {
+            if(
+                canvasRef.current&&canvasRef.current
+            ){}
+        }
+        // canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
+        //     alert("test");
+        //     e.preventDefault();
+        //     TouchFlag = true;
+        // })
+        // canvasRef.current.addEventListener(EVENT_TouchEnd,e => {
+        //     TouchFlag = false;
+        // })
+        // canvasRef.current.addEventListener(EVENT_TouchMove,e =>{
             
-            e.preventDefault();
-            console.log(EVENT_TouchMove);
-            if(TouchFlag){
+        //     e.preventDefault();
+        //     console.log(EVENT_TouchMove);
+        //     if(TouchFlag){
 
-                // e.preventDefault();
-                // if(supportTouch){
-                //     const ctx = getContext();
-                //let test = e.changeTouches[0].clientX-canvasRef.current.getBoundingClientRect().left;
-                //console.log(test);
-                //     shape(e);
-                // }
-                shape(e);
-            }
-        })
-    },[canvasRef])
+        //         // e.preventDefault();
+        //         // if(supportTouch){
+        //         //     const ctx = getContext();
+        //         //let test = e.changeTouches[0].clientX-canvasRef.current.getBoundingClientRect().left;
+        //         //console.log(test);
+        //         //     shape(e);
+        //         // }
+        //         shape(e);
+        //     }
+        // })
+    },[]);
 //   useEffect(() => {
 //     const ctx = this.getContext();
 //     ctx.save();

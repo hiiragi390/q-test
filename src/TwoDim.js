@@ -2,10 +2,10 @@ import React from 'react';
 import { useRef } from 'react';
 import SendTimeData from './TimePointData';
 
-const centerX = 150;
-const centerY = 150;
+const ballRadius = 10;
+const centerX = 125;
+const centerY = 125;
 const distanceFromCenter = 100;
-const ballRadius = 15;
 let R;
 let rect;
 let R_con = [];
@@ -26,7 +26,9 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
     const getContext = () => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
-        ctx.canvas.height =  ctx.canvas.width;
+        ctx.canvas.width = centerX*2;
+        ctx.canvas.height =  centerY*2;
+        //console.log(ctx.canvas.width);
         return canvas.getContext('2d');
     };
 
@@ -94,6 +96,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         //console.log("x",x,",y",y);
 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        console.log(ctx.canvas.height);
         //console.log(ctx.canvas.width, ctx.canvas.height);
         ctx.fillStyle = "#0095DD";
         ctx.beginPath();

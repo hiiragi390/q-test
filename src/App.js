@@ -51,15 +51,17 @@ const App = () => {
           <p id="test_bad">不満がある</p>
           <p id="test_none">利用していない</p>
           <div></div>
-          <div className="back" id="test1_back"></div>
           <div className="backLayer" id="test1_backLayer"></div>
-          <HandleMove classNum={0} Q_id={"test1"}></HandleMove>
+          <div className="back" id="test1_back"></div>
+          <div className="back2" id="test1_back2"></div>
+          {/*<HandleMove classNum={0} Q_id={"test1"}></HandleMove>*/}
+          <TwoDimMove classNum={0} Q_id={"test1"}></TwoDimMove>
         </div>
       </div>
 
       {/*<TwoDimMove classNum={0} Q_id={"test1"}></TwoDimMove> */}
       
-
+{/*
       <div className='radio_test'>
         <h3>赤羽台キャンパスの食堂について<br></br>パフォーマンス(味、コスパ、営業時間など)に満足していますか</h3>
         <RadioButton Q_id={"test1"} option={Radio_List[0]} selected={selected} onChange={RadiohandleChange}></RadioButton>
@@ -92,8 +94,8 @@ const App = () => {
       <div className='button_area'>
         <button onClick={()=>[Send(Q_list)]}>回答を確定</button>
       </div>
-
-    </div>
+  */}
+  </div>
   );
 }
 

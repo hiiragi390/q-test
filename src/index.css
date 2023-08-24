@@ -4,16 +4,6 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-
-.back{
-  width: 250px;
-  height: 250px;
-  position: absolute;
-  top: 155px;
-  left: 105px;
-  border-radius: 100%;
-}
-
 #kinoko_takenoko_back{
   background-color: white;
 }
@@ -24,30 +14,48 @@ body {
 
 .backLayer{
   position: absolute;
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  top: 205px;
-  left: 155px;
+  width: 230px;
+  height: 230px;
+  background-color: rgb(237, 237, 237);
+  top: 165px;
+  left: 115px;
 }
+
+.back2::after{
+  content: "";
+	position: absolute;
+	width: 5px; /* 縦棒の幅 */
+	height: 230px; /* 縦棒の長さ */
+ 	background: #b7b7b7; /* 縦棒の色 */
+  top: 165px;
+  left: 225px;
+}
+
+.back::after {
+	content: "";
+	position: absolute;
+	top: 280px; /* 横棒のy位置 */
+	left: 115px;/* 横棒のX位置 */
+	width: 230px; /* 横棒の長さ */
+	height: 5px; /* 横棒の幅 */
+	background: #b7b7b7; /* 横棒の色 */
+}
+
+
 
 #kinoko_takenoko_backLayer{
   background-color: antiquewhite;
 }
 
-#test1_backLayer {
-  background-color: white;
-}
-
 .handleLayer{
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 
 .handle0 {
-  top: 130px;
-  left: 80px;
+  top: 155px;
+  left: 105px;
 }
 
 .handle1{
@@ -143,7 +151,7 @@ button{
 
 #test_both{
   position: absolute;
-  top: 85px;
+  top: 105px;
   left: 168px;
 }
 
@@ -161,7 +169,7 @@ button{
 
 #test_none{
   position: absolute;
-  top: 415px;
+  top: 410px;
   left: 185px;
 }
 
