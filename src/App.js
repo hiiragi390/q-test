@@ -55,7 +55,7 @@ const App = () => {
           <div className="back" id="test1_back"></div>
           <div className="back2" id="test1_back2"></div>
           {/*<HandleMove classNum={0} Q_id={"test1"}></HandleMove>*/}
-          <TwoDimMove classNum={0} Q_id={"test1"}></TwoDimMove>
+          <TwoDimMove classNum={0} Q_id={"test_dim"}></TwoDimMove>
         </div>
       </div>
 
