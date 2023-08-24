@@ -8,9 +8,9 @@ import RadioButton from './Radio';
 import AddKey from './AddKey';
 import TwoDimMove from './TwoDim';
 
-const Q_list = ["test1", "kinoko"];
+const Q_list = ["test_dim", "kinoko"];
 const Radio_List = [["満足している","どちらとも言えない","不満がある","利用していない"],["両方好き","きのこの山が好き","たけのこの里が好き","両方好きではない"]];
-const Radio_Q_List = ["test1","kinokotakenoko"];
+const Radio_Q_List = ["test_dim","kinokotakenoko"];
 const test1_list = [1,2,3,4];
 const kinotake_list = [5,6,7,8];
 const test1_timer = 0;
