@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef } from 'react';
-import SendTimeData from './TimePointData';
+import SendTimeData from './TimePointDataDims';
 
 const ballRadius = 10;
 const centerX = 125;
@@ -53,14 +53,16 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
 
     function timeCnt(){
         timer += 0.5;
+        console.log("rwar");
     };
 
     function Settimer(){
         SendTimeData(timer, Q_id);
+        console.log("test");
     };
 
     function shape(e){
-        console.log(e);
+        //console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
         let ctx = getContext();
@@ -85,7 +87,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         X_data = X-centerX;
         Y_data = -(Y-centerY);
 
-        console.log(X_data,Y_data);
+        //console.log(X_data,Y_data);
 
         
         //console.log("x-",X," y-",Y);;;
@@ -96,7 +98,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         //console.log("x",x,",y",y);
 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        console.log(ctx.canvas.height);
+        //console.log(ctx.canvas.height);
         //console.log(ctx.canvas.width, ctx.canvas.height);
         ctx.fillStyle = "#0095DD";
         ctx.beginPath();
@@ -228,4 +230,4 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
 }
 
 export default TwoDimMove;
-export {rect}
+export {X_data, Y_data}
