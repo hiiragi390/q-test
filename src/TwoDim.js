@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import SendTimeData from './TimePointDataDims';
+import Send from './AddDataDims';
 
 const ballRadius = 10;
 const centerX = 125;
@@ -10,7 +11,7 @@ let R;
 let rect;
 let R_con = [];
 let classN = "";
-let Q_id;
+let Q_id = ["test"];
 let timer_id;
 let X;
 let Y;
@@ -58,6 +59,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
 
     function Settimer(){
         SendTimeData(timer, Q_id);
+        Send(Q_id);
         console.log("test");
     };
 
