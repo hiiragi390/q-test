@@ -9,7 +9,7 @@ function Send(Q_list){
     //console.log(rect,Q_list);
     try{  
         for(Q_id of Q_list){
-            //console.log(Q_id);
+            console.log(Q_id);
             setDoc(doc(db,"Q", "dim_result", Q_id, key),{          
                 x:X_data,
                 Y:Y_data
@@ -18,7 +18,7 @@ function Send(Q_list){
             setDoc(doc(db,"documents_list",Q_id),{
                 document: key
             })
-            //console.log("completed"); 
+            console.log("completed"); 
         }  
     }
     catch(e){
