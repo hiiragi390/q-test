@@ -11,7 +11,7 @@ let R;
 let rect;
 let R_con = [];
 let classN = "";
-let Q_id = ["test"];
+let Q_id;
 let timer_id;
 let X;
 let Y;
