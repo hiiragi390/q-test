@@ -10,7 +10,7 @@ function Send(Q_list){
     try{  
         for(Q_id of Q_list){
             //console.log(Q_id);
-            setDoc(doc(db,"Q", "result", Q_id, key),{          
+            setDoc(doc(db,"Q", "dim_result", Q_id, key),{          
                 x:X_data,
                 Y:Y_data
             }
