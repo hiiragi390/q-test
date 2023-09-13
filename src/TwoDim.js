@@ -13,6 +13,7 @@ let R_con = [];
 let classN = "";
 let Q_id;
 let timer_id;
+let time;
 let X;
 let Y;
 let X_data;
@@ -52,18 +53,25 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         //             }
         //             )
 
-    function timeCnt(){
-        timer += 0.5;
-        console.log("rwar");
-    };
 
-    function Settimer(){
-        SendTimeData(timer, Q_id);
-        Send(Q_id);
-        console.log("test");
-    };
+
+
+    // function timeCnt(){
+    //     timer += 0.5;
+    //     console.log("rwar");
+    // };
+
+    // function Settimer(){
+    //     SendTimeData(timer, Q_id);
+    //     Send(Q_id);
+    //     console.log("test");
+    // };
+
+
+
 
     function shape(e){
+        time++;
         //console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
@@ -112,6 +120,12 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         //R_con.push(R);
         
         //console.log(x," & ",y);
+
+        if(time%500==0){
+        SendTimeData(time/100,Q_id);
+        }
+
+        Send(Q_id);
         
     }
 
@@ -194,8 +208,8 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         shape(e);
         //alert("tets");
         window.addEventListener("mousemove", shape);
-        setInterval(timeCnt,500);
-        timer_id = setInterval(Settimer,1000);
+        //setInterval(timeCnt,500);
+        //timer_id = setInterval(Settimer,1000);
     }
 
     // function ScrollManage(e){
@@ -209,8 +223,8 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
     function MoveTouch(e){  
         e.preventDefault();    
         touchShape(e);
-        setInterval(timeCnt,500);
-        timer_id = setInterval(Settimer,500);
+        //setInterval(timeCnt,500);
+        //timer_id = setInterval(Settimer,500);
     }
 
     function Remove(){
