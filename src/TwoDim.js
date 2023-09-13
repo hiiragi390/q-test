@@ -13,7 +13,6 @@ let R_con = [];
 let classN = "";
 let Q_id;
 let timer_id;
-let time;
 let X;
 let Y;
 let X_data;
@@ -24,7 +23,8 @@ let y = centerY + distanceFromCenter*Math.sin(0);
 export const TwoDimMove = ({classNum, Q_id}) =>{
     let timer = 0;
     const canvasRef = useRef(null);
-    
+    let time = 0;
+
     const getContext = () => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
@@ -121,8 +121,9 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         
         //console.log(x," & ",y);
 
-        if(time%500==0){
-        SendTimeData(time/100,Q_id);
+        if(time%50==0){
+            SendTimeData(time/100,Q_id);
+            console.log("test",Q_id);
         }
 
         Send(Q_id);
