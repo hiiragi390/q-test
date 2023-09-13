@@ -42,7 +42,7 @@ const App = () => {
   return (
     <div className="App" onLoad={AddKey}>
       <div className="canvasBody">
-        <h3 id="test_title">ポケモンシリーズについてどのように思いますか</h3>
+        <h3 id="test_title">ポケモンシリーズについて、どのように思いますか</h3>
         
         <div className="test"></div>
         <div className="canvasWrap">
@@ -65,7 +65,7 @@ const App = () => {
       </div>
 
       <div className="canvasBody" id="test2">
-        <h3 id="test2_title">赤羽台キャンパスの食堂について<br></br>パフォーマンス(味、コスパ、営業時間など)に満足していますか</h3>
+        <h3 id="test2_title">ゼルダシリーズについて、どのように思いますか</h3>
         
         <div className="test"></div>
         <div className="canvasWrap">
