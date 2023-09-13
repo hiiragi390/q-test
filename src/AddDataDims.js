@@ -5,7 +5,7 @@ import key from "./Key";
 
 let Q_id;
 
-function Send(Q_list){
+function Send(Q_id){
     //console.log(rect,Q_list);
     try{  
         //for(Q_id of Q_list){

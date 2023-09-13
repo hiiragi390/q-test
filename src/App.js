@@ -42,14 +42,19 @@ const App = () => {
   return (
     <div className="App" onLoad={AddKey}>
       <div className="canvasBody">
-        <h3 id="test_title">赤羽台キャンパスの食堂について<br></br>パフォーマンス(味、コスパ、営業時間など)に満足していますか</h3>
+        <h3 id="test_title">ポケモンシリーズについてどのように思いますか</h3>
         
         <div className="test"></div>
         <div className="canvasWrap">
-          <p id="test_both">どちらとも言えない</p>
-          <p id="test_good">満足している</p>
-          <p id="test_bad">不満がある</p>
-          <p id="test_none">利用していない</p>
+          <p className="game">ゲーム性</p>
+          <p className="music">音楽</p>
+          <p className="mid_h">どちらとも<br></br>言えない</p>
+          <p className="mid_w">どちらとも<br></br>言えない</p>
+          <p className="good_h">好き</p>
+          <p className="bad_h">好みと違う</p>
+          <p className="good_w">好き</p>
+          <p className="bad_w">好みと違う</p>
+          
           <div></div>
           <div className="backLayer" id="test1_backLayer"></div>
           <div className="back" id="test1_back"></div>
@@ -58,6 +63,29 @@ const App = () => {
           <TwoDimMove classNum={0} Q_id={"test_dim"}></TwoDimMove>
         </div>
       </div>
+
+      <div className="canvasBody" id="test2">
+        <h3 id="test2_title">赤羽台キャンパスの食堂について<br></br>パフォーマンス(味、コスパ、営業時間など)に満足していますか</h3>
+        
+        <div className="test"></div>
+        <div className="canvasWrap">
+          <p className="game">ゲーム性</p>
+          <p className="music">音楽</p>
+          <p className="mid_h">どちらとも<br></br>言えない</p>
+          <p className="mid_w">どちらとも<br></br>言えない</p>
+          <p className="good_h">好き</p>
+          <p className="bad_h">好みと違う</p>
+          <p className="good_w">好き</p>
+          <p className="bad_w">好みと違う</p>
+          <div></div>
+          <div className="backLayer" id="test2_backLayer"></div>
+          <div className="back" id="test2_back"></div>
+          <div className="back2" id="test2_back2"></div>
+          {/*<HandleMove classNum={0} Q_id={"test1"}></HandleMove>*/}
+          <TwoDimMove classNum={0} Q_id={"test2_dim"}></TwoDimMove>
+        </div>
+      </div>
+
 
       {/*<TwoDimMove classNum={0} Q_id={"test1"}></TwoDimMove> */}
       

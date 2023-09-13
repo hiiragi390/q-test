@@ -149,33 +149,85 @@ button{
   left: 205px;
 }
 
-#test_both{
+#test_both, #test2_both{
   position: absolute;
   top: 105px;
   left: 168px;
 }
 
-#test_good{
+.good_h{
+  position: absolute;
+  top: 170px;
+  left: 40px;
+}
+
+.bad_h{
+  position: absolute;
+  top: 355px;
+  left: 25px;
+}
+
+.good_w{
+  position: absolute;
+  top: 400px;
+  left: 320px;
+}
+
+.bad_w{
+  position: absolute;
+  top: 400px;
+  left: 105px;
+}
+
+.mid_h{
+  position: absolute;
+  top: 255px;
+  left: 25px;
+}
+
+.mid_w{
+  position: absolute;
+  top: 400px;
+  left: 195px;
+}
+
+.game, .music{
+  position: absolute;
+  border: solid #b7b7b7;
+  padding: 5px;
+}
+
+.game{
+  left: 25px;
+  top: 110px;
+}
+
+.music{
+  left: 380px;
+  top: 390px;
+}
+
+#test_good, #test2_good{
   position: absolute;
   top: 260px;
   left: 20px;
 }
 
-#test_bad{
+#test_bad, #test2_bad{
   position: absolute;
   top: 260px;
   left: 375px;
 }
 
-#test_none{
+#test_none, #test2_none{
   position: absolute;
   top: 410px;
   left: 185px;
 }
 
-#test_title{
+#test_title, #test2_title{
   position: absolute;
-  top: 10px;
+  top: 40px;
   left: 20px;
   font-size: 14px;
 }
@@ -218,3 +270,11 @@ h3{
   width: auto;
   height: 50px;
 }
+
+
+
+#test2{
+  top: 470px;
+  position: relative;
+}
+
