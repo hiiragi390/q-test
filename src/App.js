@@ -42,12 +42,12 @@ const App = () => {
   return (
     <div className="App" onLoad={AddKey}>
       <div className="canvasBody">
-        <h3 id="test_title">ポケモンシリーズについて、どのように思いますか</h3>
+        <h3 id="test_title">自分の性格についてどのように考えていますか</h3>
         
         <div className="test"></div>
         <div className="canvasWrap">
-          <p className="game">ゲーム性</p>
-          <p className="music">音楽</p>
+          <p className="game" id="q1_h">好奇心が強い</p>
+          <p className="music" id="q1_w">他人の顔色をうかがってしまう</p>
           <p className="mid_h">どちらとも<br></br>言えない</p>
           <p className="mid_w">どちらとも<br></br>言えない</p>
           <p className="good_h">好き</p>
@@ -65,18 +65,18 @@ const App = () => {
       </div>
 
       <div className="canvasBody" id="test2">
-        <h3 id="test2_title">ゼルダシリーズについて、どのように思いますか</h3>
+        <h3 id="test2_title">自分の性格についてどのように考えていますか</h3>
         
         <div className="test"></div>
         <div className="canvasWrap">
-          <p className="game">ゲーム性</p>
-          <p className="music">音楽</p>
+          <p className="game">がんこで融通がきかない</p>
+          <p className="music">他人の面倒をよく見る</p>
           <p className="mid_h">どちらとも<br></br>言えない</p>
           <p className="mid_w">どちらとも<br></br>言えない</p>
-          <p className="good_h">好き</p>
-          <p className="bad_h">好みと違う</p>
-          <p className="good_w">好き</p>
-          <p className="bad_w">好みと違う</p>
+          <p className="good_h">当てはまる</p>
+          <p className="bad_h">当てはまらない</p>
+          <p className="good_w">当てはまる</p>
+          <p className="bad_w">当てはまらない</p>
           <div></div>
           <div className="backLayer" id="test2_backLayer"></div>
           <div className="back" id="test2_back"></div>

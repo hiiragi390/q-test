@@ -18,7 +18,7 @@ body {
   height: 230px;
   background-color: rgb(237, 237, 237);
   top: 165px;
-  left: 115px;
+  left: 85px;
 }
 
 .back2::after{
@@ -28,14 +28,14 @@ body {
 	height: 230px; /* 縦棒の長さ */
  	background: #b7b7b7; /* 縦棒の色 */
   top: 165px;
-  left: 225px;
+  left: 195px;
 }
 
 .back::after {
 	content: "";
 	position: absolute;
 	top: 280px; /* 横棒のy位置 */
-	left: 115px;/* 横棒のX位置 */
+	left: 85px;/* 横棒のX位置 */
 	width: 230px; /* 横棒の長さ */
 	height: 5px; /* 横棒の幅 */
 	background: #b7b7b7; /* 横棒の色 */
@@ -60,7 +60,7 @@ body {
 
 .handle1{
   top: 130px;
-  left: 80px;
+  left: 50px;
 }
 
 .canvasWrap{
@@ -155,56 +155,69 @@ button{
   left: 168px;
 }
 
+.good_h, .good_w, .bad_h, .bad_w, .mid_h, .mid_w{
+  font-size: smaller;
+}
+
 .good_h{
   position: absolute;
   top: 170px;
-  left: 40px;
+  left: 325px;
 }
 
 .bad_h{
   position: absolute;
   top: 355px;
-  left: 25px;
+  left: 325px;
 }
 
 .good_w{
   position: absolute;
   top: 400px;
-  left: 320px;
+  left: 265px;
 }
 
 .bad_w{
   position: absolute;
   top: 400px;
-  left: 105px;
+  left: 85px;
 }
 
 .mid_h{
   position: absolute;
-  top: 255px;
-  left: 25px;
+  top: 258px;
+  left: 325px;
 }
 
 .mid_w{
   position: absolute;
   top: 400px;
-  left: 195px;
+  left: 175px;
 }
 
 .game, .music{
-  position: absolute;
-  border: solid #b7b7b7;
-  padding: 5px;
+  font-size: large;
 }
 
 .game{
-  left: 25px;
-  top: 110px;
+  position: relative;
+  left: 30px;
+  top: 210px;
+  writing-mode: vertical-rl;
 }
 
 .music{
-  left: 380px;
-  top: 390px;
+  position: absolute;
+  left: 130px;
+  top: 110px;
+}
+
+#q1_w{
+  left: 107px;
+}
+
+#q1_h{
+  top: 242px;
 }
 
 #test_good, #test2_good{
@@ -228,7 +241,7 @@ button{
 #test_title, #test2_title{
   position: absolute;
   top: 40px;
-  left: 20px;
+  left: 40px;
   font-size: 14px;
 }
 
