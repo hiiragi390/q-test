@@ -69,7 +69,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         SendTimeData(timer, Q_id);
     };
 
-    function shape(e){
+    function DrawHandle(e){
         //console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
@@ -183,9 +183,9 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
 
     function Move(e){
-        shape(e);
+        DrawHandle(e);
         //alert("tets");
-        window.addEventListener("mousemove", shape);
+        window.addEventListener("mousemove", DrawHandle);
         setInterval(timeCnt,500);
         timer_id = setInterval(Settimer,1000);
     }
@@ -207,14 +207,14 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
     function Remove(){
         document.body.style.overflow = "auto";
-        window.removeEventListener("mousemove",shape);
+        window.removeEventListener("mousemove",DrawHandle);
         clearInterval(timer_id);
         //console.log("test");
     }
 
     function RemoveTouch(){
         document.body.style.overflow = "auto";
-        window.removeEventListener("touchmove",shape);
+        window.removeEventListener("touchmove",DrawHandle);
         clearInterval(timer_id);
         //console.log("test");
     }

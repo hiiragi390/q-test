@@ -11,10 +11,9 @@ function SendTimeData(time, Q_id){
         t:time
         }
     );
-    console.log(Q_id);
     }
     catch(e){
-        console.log(e);
+        //error
     } 
 }
 

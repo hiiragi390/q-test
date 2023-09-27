@@ -2,10 +2,10 @@ import React from 'react';
 import { useRef,useState,useEffect } from 'react';
 import SendTimeData from './TimePointData';
 
-const centerX = 150;
-const centerY = 150;
+const centerX = 125;
+const centerY = 125;
 const distanceFromCenter = 100;
-const ballRadius = 15;
+const ballRadius = 10;
 let R;
 let rect;
 let R_con = [];
@@ -14,6 +14,7 @@ let Q_id;
 let timer_id;
 let X;
 let Y;
+const width = 250;
 let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 const supportTouch = "ontouched" in document;
@@ -35,6 +36,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
     const getContext = () => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
+        ctx.canvas.width = width;
         ctx.canvas.height =  ctx.canvas.width;
         return canvas.getContext('2d');
     };
@@ -67,9 +69,9 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //         //     const ctx = getContext();
         //         //let test = e.changeTouches[0].clientX-canvasRef.current.getBoundingClientRect().left;
         //         //console.log(test);
-        //         //     shape(e);
+        //         //     DrawHandle(e);
         //         // }
-        //         shape(e);
+        //         DrawHandle(e);
         //     }
         // })
     },[]);
@@ -100,7 +102,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         SendTimeData(timer, Q_id);
     };
 
-    function shape(e){
+    function DrawHandle(e){
         //console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
@@ -122,7 +124,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //console.log(centerY+body_margin_top - Y);
         x = - distanceFromCenter* Math.cos(R) + centerX;
         y = - distanceFromCenter* Math.sin(R) + centerY;
-        //console.log("x",x,",y",y);
+        console.log(rect);
 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         //console.log(ctx.canvas.width, ctx.canvas.height);
@@ -214,9 +216,9 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
 
     function Move(e){
-        shape(e);
+        DrawHandle(e);
         //alert("tets");
-        window.addEventListener("mousemove", shape);
+        window.addEventListener("mousemove", DrawHandle);
         setInterval(timeCnt,500);
         timer_id = setInterval(Settimer,1000);
     }
@@ -238,14 +240,14 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
     function Remove(){
         document.body.style.overflow = "auto";
-        window.removeEventListener("mousemove",shape);
+        window.removeEventListener("mousemove",DrawHandle);
         clearInterval(timer_id);
         //console.log("test");
     }
 
     function RemoveTouch(){
         document.body.style.overflow = "auto";
-        window.removeEventListener("touchmove",shape);
+        window.removeEventListener("touchmove",DrawHandle);
         clearInterval(timer_id);
         //console.log("test");
     }
@@ -260,7 +262,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
     {/*onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}*/}
     
     {/* onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}*/}
-    return (<div><canvas className={classN} ref={canvasRef}></canvas><p className='test'>{test}</p> </div> 
+    return (<div><canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove}></canvas></div> 
     )  
 }
 

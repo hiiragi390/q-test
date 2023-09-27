@@ -1,5 +1,5 @@
-import React from 'react';
-import { useRef } from 'react';
+import React, { useEffect } from 'react';
+import { useRef,useState } from 'react';
 import SendTimeData from './TimePointDataDims';
 import Send from './AddDataDims';
 
@@ -21,6 +21,8 @@ let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
 export const TwoDimMove = ({classNum, Q_id}) =>{
+    const [x,setX] = useState(1);
+    const [y,setY] = useState(1);
     let timer = 0;
     const canvasRef = useRef(null);
     let time = 0;
@@ -70,7 +72,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
 
 
 
-    function shape(e){
+    function DrawHandle(e){
         time++;
         //console.log(e);
         document.body.style.overflow = "hidden";
@@ -94,10 +96,10 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
             Y = canvas.height-ballRadius;
         }
 
-        X_data = X-centerX;
-        Y_data = -(Y-centerY);
+        X_data = (X-ballRadius)/(canvas.width-ballRadius*2);
+        Y_data = (canvas.height-Y-ballRadius)/(canvas.height-ballRadius*2);
 
-        //console.log(X_data,Y_data);
+        console.log(X_data,Y_data);
 
         
         //console.log("x-",X," y-",Y);;;
@@ -170,8 +172,8 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         
     }
 
+
     function F_shape(){
-        document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
         let ctx = getContext();
         let canvas = canvasRef.current.getBoundingClientRect();
@@ -204,12 +206,14 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         R_con.push(R);
     }
 
-
+    // useEffect((e)=>{
+    //    F_shape(e);
+    // })
 
     function Move(e){
-        shape(e);
+        DrawHandle(e);
         //alert("tets");
-        window.addEventListener("mousemove", shape);
+        window.addEventListener("mousemove", DrawHandle);
         //setInterval(timeCnt,500);
         //timer_id = setInterval(Settimer,1000);
     }
@@ -231,20 +235,17 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
 
     function Remove(){
         document.body.style.overflow = "auto";
-        window.removeEventListener("mousemove",shape);
+        window.removeEventListener("mousemove",DrawHandle);
         clearInterval(timer_id);
-        //console.log("test");
     }
 
     function RemoveTouch(){
         document.body.style.overflow = "auto";
-        window.removeEventListener("touchmove",shape);
-        clearInterval(timer_id);
-        //console.log("test");
+        window.removeEventListener("touchmove",DrawHandle);
     }
     
-    classN = "handle" + classNum.toString() + " handleLayer";
-    return <canvas className={classN} ref={canvasRef} onLoad={F_shape} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
+    classN = "handle" + classNum.toString() + " handleLayer";   {/*onLoad={(e) => setX(0)}*/}
+    return <canvas className={classN} ref={canvasRef} onMouseDown={Move} onMouseUp={Remove} onMouseLeave={Remove} onTouchMove={(e) => MoveTouch(e)} onTouchEnd={RemoveTouch} onTouchCancel={RemoveTouch}></canvas>    
 }
 
 export default TwoDimMove;
