@@ -33,10 +33,10 @@ const App = () => {
 
   return (
     <div>
-    <BrowserRouter>
+    <BrowserRouter basename="/q-test">
       <Routes>
-        <Route path="/q-test/odd" element={<Test1 />}></Route>
-        <Route path="/q-test/even" element={<Test2 />}></Route>
+        <Route path="/odd" element={<Test1 />}></Route>
+        <Route path="/even" element={<Test2 />}></Route>
       </Routes>
       </BrowserRouter>
     </div>
