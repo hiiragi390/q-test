@@ -35,8 +35,8 @@ const App = () => {
     <div>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<Test1 />}></Route>
-        <Route path="/even" element={<Test2 />}></Route>
+        <Route path="/q-test/odd" element={<Test1 />}></Route>
+        <Route path="/q-test/even" element={<Test2 />}></Route>
       </Routes>
       </BrowserRouter>
     </div>
