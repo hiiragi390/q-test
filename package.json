@@ -88,7 +88,7 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://hiiragi390.github.io/q-test/",
+  "homepage": "https://hiiragi390.github.io/q-test",
   "jest": {
     "roots": [
       "<rootDir>/src"
