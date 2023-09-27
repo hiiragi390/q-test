@@ -1,7 +1,7 @@
 import Test1 from "./Test1";
 import Test2 from "./Test2";
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Link, Switch, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Router, Routes } from "react-router-dom";
 
 
 const Q_list = ["test_dim", "kinoko"];
@@ -35,12 +35,8 @@ const App = () => {
     <div>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={
-          <Test1 />
-        }></Route>
-        <Route path="/even" element={
-          <Test2 />
-        }></Route>
+        <Route path="/q-test/odd" element={<Test1 />}></Route>
+        <Route path="/q-test/even" element={<Test2 />}></Route>
       </Routes>
       </BrowserRouter>
     </div>
@@ -48,7 +44,4 @@ const App = () => {
 }
 
 export default App;
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(App);
 
