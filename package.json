@@ -61,7 +61,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && cp docs/index.html docs/even.html && cp build/index.html build/404.html",
+    "build": "node scripts/build.js && cp docs/index.html docs/even.html && cp docs/index.html docs/odd.html",
     "test": "node scripts/test.js",
     "rm": "rm -rf docs",
     "predeploy": "npm run build",
