@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Test1 from "./Test1";
 import Test2 from "./Test2";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById("root");
 if(container){
   const root = ReactDOM.createRoot(container);
   root.render(
+    <div>
     <React.StrictMode >
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
@@ -18,6 +19,7 @@ if(container){
         </Routes>
         </BrowserRouter>
     </React.StrictMode>
+    </div>
   );
 }
 else{
