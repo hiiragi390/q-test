@@ -3,23 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Test1 from "./Test1";
 import Test2 from "./Test2";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById("root");
 if(container){
   const root = ReactDOM.createRoot(container);
   root.render(
-    <div>
     <React.StrictMode >
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/q-test/" element={<Test1 />}></Route>
           <Route path="/q-test/even" element={<Test2 />}></Route>
         </Routes>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>
-    </div>
   );
 }
 else{
