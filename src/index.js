@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Test1 from "./Test1";
 import Test2 from "./Test2";
-import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById("root");
@@ -12,12 +12,12 @@ if(container){
   root.render(
     <div>
     <React.StrictMode >
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Test1 />}></Route>
           <Route path="/*" element={<Test2 />}></Route>
         </Routes>
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
     </div>
   );
