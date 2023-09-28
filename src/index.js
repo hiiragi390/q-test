@@ -14,8 +14,8 @@ if(container){
     <React.StrictMode >
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" element={<Test1 />}></Route>
-          <Route path="/even" element={<Test2 />}></Route>
+          <Route path="/q-test" element={<Test1 />}></Route>
+          <Route path="/q-test/even" element={<Test2 />}></Route>
         </Routes>
         </HashRouter>
     </React.StrictMode>
