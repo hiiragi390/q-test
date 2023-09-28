@@ -11,6 +11,7 @@ if(container){
   const root = ReactDOM.createRoot(container);
   root.render(
     <React.StrictMode >
+      <base href='/'></base>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Test1 />}></Route>
