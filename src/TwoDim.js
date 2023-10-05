@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useRef,useState } from 'react';
+import { useRef,useState, } from 'react';
 import SendTimeData from './TimePointDataDims';
 import Send from './AddDataDims';
+import { data } from 'browserslist';
 
 const ballRadius = 10;
 const centerX = 125;
@@ -11,6 +12,7 @@ let R;
 let rect;
 let R_con = [];
 let classN = "";
+
 let Q_id;
 let timer_id;
 let X;
@@ -21,11 +23,32 @@ let x = centerX + distanceFromCenter*Math.cos(0);
 let y = centerY + distanceFromCenter*Math.sin(0);
 
 export const TwoDimMove = ({classNum, Q_id}) =>{
-    const [x,setX] = useState(1);
-    const [y,setY] = useState(1);
+    const [x,setX] = useState(1.0);
+    const [y,setY] = useState(1.0);
+    const isFinalAns = useRef(true);
     let timer = 0;
     const canvasRef = useRef(null);
     let time = 0;
+    let check_X;
+    let check_Y;
+
+    
+
+    // useEffect(()=>{
+    //     console.log(check_X,check_Y);
+
+    //     if(isFinalAns.current&&check_X == X_data&&check_Y == Y_data){
+    //         Send(Q_id);
+    //         isFinalAns.current = false;
+    //         console.log("success");
+    //     }
+    //     check_X = X_data;
+    //     check_Y = Y_data;
+    //     isFinalAns.current = true;
+    // },[X_data]);
+
+
+
 
     const getContext = () => {
         const canvas = canvasRef.current;
@@ -99,7 +122,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         X_data = (X-ballRadius)/(canvas.width-ballRadius*2);
         Y_data = (canvas.height-Y-ballRadius)/(canvas.height-ballRadius*2);
 
-        console.log(X_data,Y_data);
+        //console.log(X_data,Y_data);
 
         
         //console.log("x-",X," y-",Y);;;
@@ -123,14 +146,13 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
         
         //console.log(x," & ",y);
 
-        console.log(time);
+       // console.log(time);
         if(time%50==0){
-            SendTimeData(time/100,Q_id);
+            //SendTimeData(time/100,Q_id);
             console.log("test",Q_id);
         }
 
         Send(Q_id);
-        
     }
 
     function touchShape(e){

@@ -6,11 +6,10 @@ import { Radio_A_list } from "./Radio";
 
 let Q_id;
 
-function Send(Q_list){
+function Send(Q_id){
     //console.log(rect,Q_list);
     try{  
-        for(Q_id of Q_list){
-            //console.log(Q_id);
+            console.log(Q_id);
             setDoc(doc(db,"Q", "result", Q_id, key),{          
                 radius:rect
             }
@@ -20,7 +19,6 @@ function Send(Q_list){
             })
             //console.log("completed"); 
         }  
-    }
     catch(e){
         console.log(e);
     } 

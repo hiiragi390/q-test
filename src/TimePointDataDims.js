@@ -5,7 +5,7 @@ import key from "./Key";
 
 function SendTimeData(time, Q_id){
     try{
-    setDoc(doc(db, "dim_time", Q_id, key, time.toString()),{       
+    setDoc(doc(db, "time", Q_id, key, time.toString()),{       
         x:X_data,
         y:Y_data,
         t:time

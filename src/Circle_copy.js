@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRef,useState,useEffect } from 'react';
 import SendTimeData from './TimePointData';
+import Send from './AddData';
 
 const centerX = 125;
 const centerY = 125;
@@ -29,7 +30,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
     const [EventLister, setEventListener] = React.useState(0);
     const EventRef = useRef();
     const [test, setTest] = useState(0);
-    let timer = 0;
+    let time = 0;
     const canvasRef = useRef(null);
     let TouchFlag = false;
     
@@ -94,15 +95,17 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //             }
         //             )
 
-    function timeCnt(){
-        timer += 0.5;
-    };
+    // function timeCnt(){
+    //     timer += 0.5;
+    // };
 
-    function Settimer(){
-        SendTimeData(timer, Q_id);
-    };
+    // function Settimer(){
+    //     SendTimeData(timer, Q_id);
+    // };
 
     function DrawHandle(e){
+        time++;
+        console.log(time);
         //console.log(e);
         document.body.style.overflow = "hidden";
         //console.log(document.body.style.overflow);
@@ -124,7 +127,7 @@ export const HandleMove = ({classNum, Q_id}) =>{
         //console.log(centerY+body_margin_top - Y);
         x = - distanceFromCenter* Math.cos(R) + centerX;
         y = - distanceFromCenter* Math.sin(R) + centerY;
-        console.log(rect);
+        //console.log(rect);
 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         //console.log(ctx.canvas.width, ctx.canvas.height);
@@ -136,7 +139,13 @@ export const HandleMove = ({classNum, Q_id}) =>{
 
         R_con.push(R);
         
+        console.log(time);
         //console.log(x," & ",y);
+        if(time%50==0){
+            console.log("test",time/100);
+            SendTimeData(time/100,Q_id);
+        }
+        Send(Q_id);
         
     }
 
@@ -219,8 +228,8 @@ export const HandleMove = ({classNum, Q_id}) =>{
         DrawHandle(e);
         //alert("tets");
         window.addEventListener("mousemove", DrawHandle);
-        setInterval(timeCnt,500);
-        timer_id = setInterval(Settimer,1000);
+        // setInterval(timeCnt,500);
+        // timer_id = setInterval(Settimer,1000);
     }
 
     // function ScrollManage(e){
@@ -234,21 +243,21 @@ export const HandleMove = ({classNum, Q_id}) =>{
     function MoveTouch(e){  
         e.preventDefault();    
         touchShape(e);
-        setInterval(timeCnt,500);
-        timer_id = setInterval(Settimer,500);
+        // setInterval(timeCnt,500);
+        // timer_id = setInterval(Settimer,500);
     }
 
     function Remove(){
         document.body.style.overflow = "auto";
         window.removeEventListener("mousemove",DrawHandle);
-        clearInterval(timer_id);
+        // clearInterval(timer_id);
         //console.log("test");
     }
 
     function RemoveTouch(){
         document.body.style.overflow = "auto";
         window.removeEventListener("touchmove",DrawHandle);
-        clearInterval(timer_id);
+        // clearInterval(timer_id);
         //console.log("test");
     }
 
