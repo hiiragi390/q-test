@@ -148,7 +148,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
 
        // console.log(time);
         if(time%50==0){
-            //SendTimeData(time/100,Q_id);
+            SendTimeData(time/100,Q_id);
             console.log("test",Q_id);
         }
 
