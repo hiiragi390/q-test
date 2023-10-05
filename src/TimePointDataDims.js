@@ -11,10 +11,12 @@ function SendTimeData(time, Q_id){
         t:time
         }
     );
+    console.log("con");
     }
     catch(e){
         //error
-    } 
+    }
+     
 }
 
 export default SendTimeData;
