@@ -34,18 +34,18 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
 
     
 
-    // useEffect(()=>{
-    //     console.log(check_X,check_Y);
+    useEffect(()=>{
+        
 
-    //     if(isFinalAns.current&&check_X == X_data&&check_Y == Y_data){
-    //         Send(Q_id);
-    //         isFinalAns.current = false;
-    //         console.log("success");
-    //     }
-    //     check_X = X_data;
-    //     check_Y = Y_data;
-    //     isFinalAns.current = true;
-    // },[X_data]);
+        if(isFinalAns.current&&check_X == X_data&&check_Y == Y_data){
+            Send(Q_id);
+            isFinalAns.current = false;
+            console.log("success");
+        }
+        check_X = X_data;
+        check_Y = Y_data;
+        isFinalAns.current = true;
+    },[X_data]);
 
 
 
@@ -152,7 +152,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
             console.log("test",Q_id);
         }
 
-        Send(Q_id);
+        //Send(Q_id);
     }
 
     function touchShape(e){

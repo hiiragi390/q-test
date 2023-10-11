@@ -15,7 +15,7 @@ function Send(Q_id){
                 Y:Y_data
             }
             );
-            setDoc(doc(db,"documents_list",key),{
+            setDoc(doc(db,"documents_list",Q_id),{
                 document: key
             })
             //console.log("completed"); 
