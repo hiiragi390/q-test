@@ -61,14 +61,14 @@ const Test2 = () => {
 
       
       <div className="canvasBody" id="test2">
-        <h3 id="test2_title">Python, java script<br></br>それぞれの基本的なプログラムが書けますか？</h3>
+        <h3 id="test2_title">Python, JavaScript<br></br>それぞれの基本的なプログラムが書けますか？</h3>
         
         <div className="test"></div>
         <div className="canvasWrap">
 
           <p className="both">両方書ける</p>
           <p className="py">Pythonが<br></br>書ける</p>
-          <p className="js">java scriptが<br></br>書ける</p>
+          <p className="js">JavaScriptが<br></br>書ける</p>
           <p className="ot">どちらも書けない</p>
           <div></div>
 
