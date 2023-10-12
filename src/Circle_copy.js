@@ -22,7 +22,7 @@ const supportTouch = "ontouched" in document;
 const EVENT_TouchStart = supportTouch? "touchstart":"mousedown";
 const EVENT_TouchMove = supportTouch? "touchmove":"mousemove";
 const EVENT_TouchEnd = supportTouch? "touchend":"mouseup";
-
+let load = true;
 
 
 export const HandleMove = ({classNum, Q_id}) =>{
@@ -42,14 +42,12 @@ export const HandleMove = ({classNum, Q_id}) =>{
         return canvas.getContext('2d');
     };
 
+
     //alert(EVENT_TouchMove);
     console.log(canvasRef.current);
     useEffect(()=>{
-        console.log(canvasRef.current);
-        const touch_test = (e) => {
-            if(
-                canvasRef.current&&canvasRef.current
-            ){}
+        if(load){
+            
         }
         // canvasRef.current.addEventListener(EVENT_TouchStart,e =>{
         //     alert("test");

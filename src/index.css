@@ -252,6 +252,11 @@ button{
   position: absolute;
 }
 
+.attention{
+  padding-left: 35px;
+  background-color: rgb(219, 236, 245);
+}
+
 .f_js{
   top: 130px;
   left: 10px;
