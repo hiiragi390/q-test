@@ -36,7 +36,7 @@ const Test1 = () => {
 
   return (
     <div className="App" onLoad={AddKey}>
-      <h3 className='attention'>＊グレーの領域上をクリックまたは<br></br>　ドラッグで回答してください</h3>
+      <h3 className='attention'>＊グレーの領域上をクリックまたは<br></br>　ドラッグで回答してください<br></br>　回答は自動的に送信されます。何度修正しても構いません。</h3>
       <div className="canvasBody" id="test3">
         <h3 id="test1_title">Python, java scriptそれぞれの<br></br>基本的なプログラムは書けますか？</h3>
         
