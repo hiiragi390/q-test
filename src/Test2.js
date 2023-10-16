@@ -36,7 +36,7 @@ const Test2 = () => {
 
   return (
     <div className="App" onLoad={AddKey}>
-      <h3 className='attention'>＊グレーの領域上をクリックまたは<br></br>　ドラッグで回答してください<br></br>　回答は自動的に送信されます。何度修正しても構いません。</h3>
+      <h3 className='attention'>＊グレーの領域上をクリックまたは<br></br>　ドラッグで回答してください<br></br>　回答は自動的に送信されます。何度修正しても構いません。<br></br>本アンケートでは個人情報は取集されず、また収集データは研究以外の目的に使用しません。<br></br>データは研究終了後、速やかに破棄されます。</h3>
       <div className="canvasBody" id="test3">
         <h3 id="test1_title">「きのこの山」と「たけのこの里」は」<br></br>好きですか？</h3>
         
