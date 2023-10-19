@@ -13,7 +13,7 @@ function Send(Q_id){
                 radius:rect
             }
             );
-            setDoc(doc(db,"documents_list",Q_id),{
+            setDoc(doc(db,"documents_list",Q_id,key),{
                 document: key
             })
             console.log("completed"); 
