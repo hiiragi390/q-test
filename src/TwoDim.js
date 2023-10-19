@@ -152,7 +152,7 @@ export const TwoDimMove = ({classNum, Q_id}) =>{
             console.log("test",Q_id);
         }
 
-        //Send(Q_id);
+        Send(Q_id);
     }
 
     function touchShape(e){
